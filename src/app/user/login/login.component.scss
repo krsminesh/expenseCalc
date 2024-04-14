@@ -1,0 +1,20 @@
+.login-form{
+    label{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        box-shadow: 0 0 5px rgba(0,0,0,.24);
+        padding: 20px;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .jumbotron{
+        margin: 0;
+        padding: 20px;
+        height: 100%;
+        background-color: rgba(0,0,0,.08);
+        border-radius: 20px;
+    }
+}
+
