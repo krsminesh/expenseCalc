@@ -13,6 +13,7 @@
             <div class="card">
                 <a href="javascript:;" [routerLink]="rLViewExpense" class="d-flex mb-3">Click here to navigate to view the expense</a>
 
+                <!-- ng Model method starts-->
                 <h3 class="mb-3">Using Formtag and ngModel</h3>
                 <div class="row">
                     <div class="col-3">User Name:</div>
@@ -33,6 +34,9 @@
                     </div>
                 </div>
                 <div [ngClass]="ngMMsgSuccess == 'success' ? 'text-success' : 'text-danger'" class="text-success">{{ngMMsg}}</div>
+                <!-- ng Model method ends-->
+
+                
             </div>
         </div>
     </div>
