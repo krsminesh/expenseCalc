@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { GlobalConstant } from '../../common/global.constant';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
 
-  getApi(){
-
+  getApi(apiURL:string){
+    return this.httpClient.get(apiURL);
   }
 
   postApi(){
@@ -23,8 +25,10 @@ export class ApiServiceService {
   }
 
 
-  getLoginUser(){
-
+  getLoginUser(username:string, pswd:string){
+    let apiURL = GlobalConstant.userApiURL+'?username='+username+'&password='+pswd;
+    console.log(apiURL);
+    return this.getApi(apiURL);
   }
 
   addExpenseApi(){

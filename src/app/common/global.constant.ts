@@ -8,5 +8,13 @@ export class GlobalConstant{
 
     static addExpenseRoute = '/addExpense';
 
+    static viewExpLink = '/view-expense';
+
     static sessionRemoveMsg = " : Session Removed Successfuly";
+
+    static loginWaitMsg ="Please wait until login is successfull";
+
+    static mandatoryTxt ="Please enter username and password to login"
+
+    static loginErrMsg ="Either Username or password is wrong";
 }

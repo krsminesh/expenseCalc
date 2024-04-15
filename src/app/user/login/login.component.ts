@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstant } from 'src/app/common/global.constant';
+import { ApiServiceService } from 'src/app/service/api/api-service.service';
 import { SessionService } from 'src/app/service/session/session.service';
 
 @Component({
@@ -10,25 +12,45 @@ import { SessionService } from 'src/app/service/session/session.service';
 export class LoginComponent {
   rLViewExpense:string = '/view-expense';
 
-  constructor(private SessionService:SessionService, private router: Router){}
+  constructor(
+        private SessionService:SessionService, 
+        private router: Router,
+        private ApiServiceService : ApiServiceService
+  ){}
 
   /* ng model method starts */
 
-  ngMUserName:string ="";
-  ngMPswd:string="";
+  ngMUserName:string ="Nicholas Wilber";
+  ngMPswd:string="Credit";
   ngMMsg:string="";
   ngMMsgSuccess:string ="";
-  apiUrl = 'https://retoolapi.dev/EYB0o0/expenseCalcLogin';
+  //apiUrl = 'https://retoolapi.dev/EYB0o0/expenseCalcLogin';
 
   ngCheckLogin(){
     if(this.ngMUserName != "" && this.ngMPswd != ""){
-      this.ngMMsg = "Please wait until login is successfull";
+      this.ngMMsg = GlobalConstant.loginWaitMsg;
       this.ngMMsgSuccess = "success";
-      /*this.SessionService.setSession("CurrentLoginUser", this.ngMUserName);
-      this.router.navigate(['/view-expense']);*/
+      this.ApiServiceService.getLoginUser(this.ngMUserName, this.ngMPswd).subscribe(
+        (user:any)=>{
+          console.log(user);
+          if(user.length > 0 && user && user[0].username == this.ngMUserName && user[0].password == this.ngMPswd){
+            this.SessionService.setLoginUserSession(this.ngMUserName);
+            this.router.navigate([GlobalConstant.viewExpLink])
+          }
+          else{
+            this.ngMMsgSuccess = "failed";
+            this.ngMMsg = GlobalConstant.loginErrMsg;
+          }
+          //this.SessionService.setLoginUserSession(GlobalConstant.userSession, this.ngMUserName);
+        },
+        (err)=>{
+          alert(err)
+        }
+      );
     }
     else{
-      this.ngMMsg = "Error in user name or password"
+      this.ngMMsgSuccess = "failed";
+      this.ngMMsg = GlobalConstant.mandatoryTxt;
     }
   }
 

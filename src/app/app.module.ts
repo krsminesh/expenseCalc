@@ -8,6 +8,7 @@ import { LoginComponent } from './user/login/login.component';
 import { ViewExpenseComponent } from './trip/view-expense/view-expense.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

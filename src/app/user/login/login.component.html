@@ -1,4 +1,4 @@
-<div class="container my-4 login-form">
+<div class="login-form">
     <div class="row">
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
@@ -33,7 +33,10 @@
                         <button type="button" class="btn btn-primary" (click)="ngCheckLogin()" tooltip="Enter Username and Password to login">Login</button>
                     </div>
                 </div>
-                <div [ngClass]="ngMMsgSuccess == 'success' ? 'text-success' : 'text-danger'" class="text-success">{{ngMMsg}}</div>
+                <div [ngClass]="ngMMsgSuccess == 'success' ? 'text-success d-flex' : 'text-danger d-flex'" class="align-item-center ">
+                    {{ngMMsg}}
+                    <span class="loader d-inline-flex mx-2" *ngIf="ngMMsgSuccess!=''"></span>
+                </div>
                 <!-- ng Model method ends-->
 
                 <hr class="my-4 d-block"/>
