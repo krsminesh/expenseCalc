@@ -25,7 +25,6 @@ export class ViewExpenseComponent implements OnInit{
     // check user login starts  
     if(!this.SessionService.checkLoginUserSession()){
         this.router.navigate(['']);
-        alert(this.SessionService.checkLoginUserSession())
     }
     // check user login ends
 

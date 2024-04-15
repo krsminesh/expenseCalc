@@ -1,18 +1,16 @@
 <div class="mb-4">
-    <div class="d-flex align-item-center justify-content-between">
-        <h2>Welcome {{currentUserName}}!</h2>
+    <div class="d-flex align-item-center justify-content-end">
         <div class="d-flex ">
             <button class="btn btn-primary mx-3" (click)="navigateAddExp()">Add Expense</button>
             <button class="btn btn-primary" (click)="seeMyExpense()">See My Expense</button>
-        </div>
-        
+        </div>        
     </div>
 </div>
 
 
-<div class="tbl-responsive">
-    <table class="tbl" width="100%">
-        <thead>
+<div class="table-responsive">
+    <table class="table table-striped " width="100%">
+        <thead class="thead-dark">
             <tr>
                 <th>Expense Add By</th>
                 <th>Item Name</th>

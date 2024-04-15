@@ -29,5 +29,9 @@ export class SessionService {
   getLoginUserSession(){
     return sessionStorage.getItem(GlobalConstant.userSession)
   }
+
+  logoutCurrentUser(){
+    sessionStorage.removeItem(GlobalConstant.userSession);
+  }
   
 }

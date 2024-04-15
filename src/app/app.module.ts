@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './trip/add-expense/add-expense.component';
+import { LogoutComponent } from './user/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ViewExpenseComponent,
-    AddExpenseComponent
+    AddExpenseComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

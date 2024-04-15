@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalConstant } from 'src/app/common/global.constant';
 import { ApiServiceService } from 'src/app/service/api/api-service.service';
@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/service/session/session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   rLViewExpense:string = '/view-expense';
 
   constructor(
@@ -17,6 +17,12 @@ export class LoginComponent {
         private router: Router,
         private ApiServiceService : ApiServiceService
   ){}
+
+  ngOnInit(): void {
+      if(!this.SessionService.checkLoginUserSession()){
+        this.router.navigate(['']);
+    }
+  }
 
   /* ng model method starts */
 
