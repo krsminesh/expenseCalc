@@ -1,1 +1,38 @@
-<p>view-expense works!</p>
+<div class="mb-4">
+    <div class="d-flex align-item-center justify-content-between">
+        <h2>Welcome {{currentUserName}}!</h2>
+        <div class="d-flex ">
+            <button class="btn btn-primary mx-3" (click)="navigateAddExp()">Add Expense</button>
+            <button class="btn btn-primary" (click)="seeMyExpense()">See My Expense</button>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="tbl-responsive">
+    <table class="tbl" width="100%">
+        <thead>
+            <tr>
+                <th>Expense Add By</th>
+                <th>Item Name</th>
+                <th>Item category</th>
+                <th>Amount</th>
+                <th>expense Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let expense of expenses">
+                <td>{{expense.username}}</td>
+                <td>{{expense.itemName}}</td>
+                <td>{{expense.category}}</td>
+                <td>{{expense.amount}}</td>
+                <td>{{expense.expDate}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" *ngIf="myExpense" (click)="deleteExpense(expense)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

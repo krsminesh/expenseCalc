@@ -36,6 +36,13 @@ export class ApiServiceService {
   }
 
   getExpenseApi(){
+    let apiURL = GlobalConstant.expenseApiURL;
+    console.log(apiURL);
+    return this.getApi(apiURL);
+  }
 
+  getLoginUserExpenseApi(username:string){
+    let apiURL = GlobalConstant.userApiURL+'?username='+username;
+    return this.getApi(apiURL);
   }
 }

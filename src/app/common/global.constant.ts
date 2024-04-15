@@ -6,7 +6,7 @@ export class GlobalConstant{
 
     static userSession = "CurrentLoginUser";
 
-    static addExpenseRoute = '/addExpense';
+    static addExpenseRoute = '/add-expense';
 
     static viewExpLink = '/view-expense';
 

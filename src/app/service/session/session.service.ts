@@ -13,14 +13,21 @@ export class SessionService {
 
   }
   checkLoginUserSession(){
-
+    let chkSessionVar = sessionStorage.getItem(GlobalConstant.userSession);
+    if(chkSessionVar != "" && chkSessionVar!= null && chkSessionVar != undefined ){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
+
   setLoginUserSession(ssValue:string){
     sessionStorage.setItem(GlobalConstant.userSession, ssValue)
   }
 
   getLoginUserSession(){
-    sessionStorage.getItem(GlobalConstant.userSession)
+    return sessionStorage.getItem(GlobalConstant.userSession)
   }
   
 }

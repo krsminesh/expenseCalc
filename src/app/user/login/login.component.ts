@@ -41,10 +41,9 @@ export class LoginComponent {
             this.ngMMsgSuccess = "failed";
             this.ngMMsg = GlobalConstant.loginErrMsg;
           }
-          //this.SessionService.setLoginUserSession(GlobalConstant.userSession, this.ngMUserName);
         },
         (err)=>{
-          alert(err)
+          console.log('login check: '+err)
         }
       );
     }
