@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalConstant } from 'src/app/common/global.constant';
 import { ApiServiceService } from 'src/app/service/api/api-service.service';
@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/service/session/session.service';
   templateUrl: './view-expense.component.html',
   styleUrls: ['./view-expense.component.scss']
 })
-export class ViewExpenseComponent implements OnInit{
+export class ViewExpenseComponent implements OnInit, OnDestroy{
 
   constructor(private SessionService: SessionService,
               private router: Router,
@@ -44,6 +44,10 @@ export class ViewExpenseComponent implements OnInit{
       }
     );
 
+  }
+
+  ngOnDestroy(){
+    console.log("View Expense Component destoyed")
   }
 
   seeMyExpense(){

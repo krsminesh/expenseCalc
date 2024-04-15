@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalConstant } from 'src/app/common/global.constant';
 import { ApiServiceService } from 'src/app/service/api/api-service.service';
@@ -9,7 +9,7 @@ import { SessionService } from 'src/app/service/session/session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit, OnDestroy{
   rLViewExpense:string = '/view-expense';
 
   constructor(
@@ -22,6 +22,10 @@ export class LoginComponent implements OnInit{
       if(!this.SessionService.checkLoginUserSession()){
         this.router.navigate(['']);
     }
+  }
+
+  ngOnDestroy(){
+    console.log("Login Component Destroyed")
   }
 
   /* ng model method starts */

@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, Component, OnInit, } from '@angular/core';
+import { AfterContentChecked, Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from './service/session/session.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class AppComponent implements OnInit, AfterContentChecked {
 
   currentUserName:any ="";
 
-  constructor(private SessionService: SessionService){}
+  constructor(private SessionService: SessionService,
+              private router: Router 
+  ){}
 
   ngOnInit() {
     this.appSessionUserName();
@@ -25,6 +28,11 @@ export class AppComponent implements OnInit, AfterContentChecked {
     if(this.SessionService.getLoginUserSession() != ""){
       this.currentUserName = this.SessionService.getLoginUserSession();
     }
+  }
+
+  userLogout(){
+    this.SessionService.logoutCurrentUser();
+    this.router.navigate([""])
   }
 
 }
