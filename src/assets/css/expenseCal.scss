@@ -19,4 +19,12 @@ body{
     100% {
         transform: rotate(360deg);
     }
+
+}
+.table{
+    th{
+        background-color: #0071bc;
+        color: #fff;
+        min-height: 45px;
+    }
 } 
