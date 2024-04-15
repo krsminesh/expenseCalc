@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SessionService } from 'src/app/service/session.service';
+import { SessionService } from 'src/app/service/session/session.service';
 
 @Component({
   selector: 'app-login',
@@ -22,10 +22,10 @@ export class LoginComponent {
 
   ngCheckLogin(){
     if(this.ngMUserName != "" && this.ngMPswd != ""){
-      this.ngMMsg = "Success";
+      this.ngMMsg = "Please wait until login is successfull";
       this.ngMMsgSuccess = "success";
-      this.SessionService.setSession("CurrentLoginUser", this.ngMUserName);
-      this.router.navigate(['/view-expense']);
+      /*this.SessionService.setSession("CurrentLoginUser", this.ngMUserName);
+      this.router.navigate(['/view-expense']);*/
     }
     else{
       this.ngMMsg = "Error in user name or password"

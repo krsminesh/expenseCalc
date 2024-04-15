@@ -36,6 +36,31 @@
                 <div [ngClass]="ngMMsgSuccess == 'success' ? 'text-success' : 'text-danger'" class="text-success">{{ngMMsg}}</div>
                 <!-- ng Model method ends-->
 
+                <hr class="my-4 d-block"/>
+
+                <!-- Form Module method starts-->
+                <h3 class="mb-3">Form Module Method</h3>
+                <div class="row">
+                    <div class="col-3">User Name:</div>
+                    <div class="col-9">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-3">Password:</div>
+                    <div class="col-9">
+                        <input type="password" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-3"></div>
+                    <div class="col-9 d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary" tooltip="Enter Username and Password to login">Login</button>
+                    </div>
+                </div>
+                <div [ngClass]="ngMMsgSuccess == 'success' ? 'text-success' : 'text-danger'" class="text-success">{{ngMMsg}}</div>
+                <!-- Form Module method ends-->
+
                 
             </div>
         </div>
