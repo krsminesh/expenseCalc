@@ -11,6 +11,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './trip/add-expense/add-expense.component';
 import { LogoutComponent } from './user/logout/logout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LogoutComponent } from './user/logout/logout.component';
     LoginComponent,
     ViewExpenseComponent,
     AddExpenseComponent,
-    LogoutComponent
+    LogoutComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

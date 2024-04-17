@@ -32,8 +32,15 @@ export class ViewExpenseComponent implements OnInit, OnDestroy{
       this.currentUserName = this.SessionService.getLoginUserSession();
     }
     
+    this.seeAllExpense();
+  }
 
+  ngOnDestroy(){
+    console.log("View Expense Component destoyed")
+  }
+  seeAllExpense(){
     //load add expenses
+    this.myExpense = false;
     this.ApiServiceService.getExpenseApi().subscribe(
       (response:any)=>{
         console.log(response);
@@ -43,13 +50,7 @@ export class ViewExpenseComponent implements OnInit, OnDestroy{
         console.log('view all expense: '+err);
       }
     );
-
   }
-
-  ngOnDestroy(){
-    console.log("View Expense Component destoyed")
-  }
-
   seeMyExpense(){
     this.ApiServiceService.getLoginUserExpenseApi(this.currentUserName).subscribe(
       (response:any) => {

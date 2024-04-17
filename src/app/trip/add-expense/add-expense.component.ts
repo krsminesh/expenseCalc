@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-expense.component.scss']
 })
 export class AddExpenseComponent {
-
+  rlBackToViewExpense = "/view-expense";
 }

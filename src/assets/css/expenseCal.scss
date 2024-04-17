@@ -28,3 +28,6 @@ body{
         min-height: 45px;
     }
 } 
+.main-content{
+    min-height: calc(100vh - 100px);
+}

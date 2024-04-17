@@ -1,0 +1,7 @@
+<ng-container >
+    <h1 class="text-center mb-4">Expense Calculator</h1>
+    <div class="d-flex justify-content-between mb-4" *ngIf="currentUserName != '' && currentUserName != null">
+        <h3>Welcome {{currentUserName }}!</h3>
+        <app-logout (click)="userLogout()" text="Logout"></app-logout>
+    </div>
+</ng-container>

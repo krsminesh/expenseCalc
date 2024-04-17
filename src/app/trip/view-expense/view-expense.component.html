@@ -1,5 +1,11 @@
 <div class="mb-4">
-    <div class="d-flex align-item-center justify-content-end">
+    <div class="d-flex align-item-center"
+        [ngClass]="{
+            'justify-content-between':myExpense,
+            'justify-content-end': !myExpense
+        }"
+    >
+        <a href="javascript:;" *ngIf="myExpense" (click)="seeAllExpense()" class="btn btn-secondary d-inline-flex">&lt; Back</a>
         <div class="d-flex ">
             <button class="btn btn-primary mx-3" (click)="navigateAddExp()">Add Expense</button>
             <button class="btn btn-primary" (click)="seeMyExpense()">See My Expense</button>
