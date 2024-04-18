@@ -42,7 +42,7 @@ export class ApiServiceService {
   }
 
   getLoginUserExpenseApi(username:string){
-    let apiURL = GlobalConstant.userApiURL+'?username='+username;
+    let apiURL = GlobalConstant.expenseApiURL+'?username='+username;
     return this.getApi(apiURL);
   }
 }

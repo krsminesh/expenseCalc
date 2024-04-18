@@ -25,6 +25,9 @@ export class SessionService {
   setLoginUserSession(ssValue:string){
     sessionStorage.setItem(GlobalConstant.userSession, ssValue)
   }
+  setLoginUserType(ttValue:string){
+    sessionStorage.setItem(GlobalConstant.userLgType, ttValue)
+  }
 
   getLoginUserSession(){
     return sessionStorage.getItem(GlobalConstant.userSession)

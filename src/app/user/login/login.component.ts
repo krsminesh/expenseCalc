@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   /* ng model method starts */
 
-  ngMUserName:string ="Nicholas Wilber";
-  ngMPswd:string="Credit";
+  ngMUserName:string ="Anand";
+  ngMPswd:string="123";
   ngMMsg:string="";
   ngMMsgSuccess:string ="";
   //apiUrl = 'https://retoolapi.dev/EYB0o0/expenseCalcLogin';
@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy{
           console.log(user);
           if(user.length > 0 && user && user[0].username == this.ngMUserName && user[0].password == this.ngMPswd){
             this.SessionService.setLoginUserSession(this.ngMUserName);
+            this.SessionService.setLoginUserType(user[0].lgtype);
             this.router.navigate([GlobalConstant.viewExpLink])
           }
           else{

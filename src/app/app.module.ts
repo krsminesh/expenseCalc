@@ -13,6 +13,7 @@ import { AddExpenseComponent } from './trip/add-expense/add-expense.component';
 import { LogoutComponent } from './user/logout/logout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AddExpenseComponent,
     LogoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
