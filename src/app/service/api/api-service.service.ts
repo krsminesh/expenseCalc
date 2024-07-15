@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { GlobalConstant } from '../../common/global.constant';
 import { HttpClient } from '@angular/common/http'
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  //providedIn: 'root'
+})
 export class ApiServiceService {
 
   constructor(private httpClient : HttpClient) { }
