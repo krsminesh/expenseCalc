@@ -34,7 +34,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     TooltipModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApiServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
